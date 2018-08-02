@@ -1,0 +1,32 @@
+entity Customer{
+	custID Integer,
+	custName String,
+    custEmail String,
+    custAddress String
+}
+
+entity Order{
+	order_id Integer,
+    order_date Instant    
+}
+
+entity OrderDetail{
+	custID Integer,
+    order_id Integer,
+    itemID Integer,
+    qty Integer,
+    unit_price Double
+}
+
+relationship OneToMany{
+	OrderDetail{Customer} to Customer
+}
+    
+
+relationship OneToMany{
+ OrderDetail{Order} to Order
+}
+
+dto * with mapstruct
+
+angularSuffix * with mySuffix
